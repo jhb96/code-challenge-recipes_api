@@ -1,0 +1,19 @@
+{
+  "name": "recipes-api-challenge",
+  "version": "1.0.0",
+  "description": "http://json-schema.org/ to validate the JSON schema of the API.",
+  "main": "client.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "start": "npm install && sam build && sam deploy -g",
+    "deploy": "sam build && sam deploy",
+    "test": "node client.js help",
+    "delete": "sam delete"
+  },
+  "author": "jhbmjo@gmail.com",
+  "dependencies": {
+    "axios": "^0.27.2"
+  }
+}

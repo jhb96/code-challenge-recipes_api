@@ -1,0 +1,47 @@
+{   
+    "id":"burger_classic",
+    "name":"Classic Hamburguer!",
+    "ingredients":[
+        {
+            "name":"ground beef",
+            "type":"meat",
+            "categories":["sauce", "tomato"],
+            "quantity":"1/2 pounds"
+        },
+        {
+            "name":"Cheddar",
+            "type":"cheese",
+            "categories":["cheese", "dairy"],
+            "quantity":"1 or 2 slices of cheddar cheese"
+        },
+        {
+            "name":"Hamburger buns",
+            "type":"bread",
+            "categories":["bread", "buns"],
+            "quantity":"2 unit"
+        }
+        
+    ],
+    "steps":[
+        {
+            "title":"Add the meat",
+            "description":"Add 80% lean ground beef to a large bowl"
+        },
+        {
+            "title":"Add species",
+            "description":"Add Worcestershire sauce, seasoning salt, garlic powder, and pepper"
+        },
+        {
+            "title":"Mix it!",
+            "description":"Mix with your hands until well combined"
+        },
+        {
+            "title":"Grill it!",
+            "description":"Grill over medium-high heat for about 4 minutes on each side."
+        },
+        {
+            "title":"Finish it!",
+            "description":"Top with your favorite traditional burger toppings (lettuce, tomato, onion, pickles, ketchup, etc.)"
+        }
+    ]
+}

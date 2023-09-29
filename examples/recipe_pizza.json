@@ -1,0 +1,38 @@
+    {   
+        "id":"pizza_margherita_italian",
+        "name":"Pizza margherita al estilo Italiano",
+        "ingredients":[
+            {
+                "name":"tomato sauce",
+                "type":"vegetable",
+                "categories":["sauce", "tomato"],
+                "quantity":"200 ml"
+            },
+            {
+                "name":"Mozzarella",
+                "type":"cheese",
+                "categories":["cheese", "dairy"],
+                "quantity":"30g"
+            },
+            {
+                "name":"Pizza base",
+                "type":"pizza base",
+                "categories":["flour", "base"],
+                "quantity":"1 unit"
+            }
+            
+        ],
+        "steps":[
+            {
+                "title":"Prepare the pizza base",
+                "description":"Spread the tomato sauce into the base and mix it with the cheese"
+            },
+            {
+                "title":"Bake the pizza",
+                "description":"Bake for 15 minutes or until the cheese is melted"
+            },
+            {
+                "title":"Serve the pizza and enjoy it!"
+            }
+        ]
+    }

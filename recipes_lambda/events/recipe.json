@@ -1,0 +1,41 @@
+{
+    "name": "Pizza Margherita",
+    "type":"Pizza", 
+    "description": "Recipe of a simple pizza margherita with cheese and tomato sauce", 
+    "ingredients": [
+        {
+            "name": "Pizza base",
+            "type":"pizza base",
+            "quantity": 1,
+            "unit": "unit"
+        },
+        {
+            "name": "Tomato Sauce",
+            "type":"tomato",
+            "category":["fruit","sauce"],        
+            "quantity": 2,
+            "unit": "kg",
+            "possible_brands":["Orlado", "Buitoni"]
+        },
+        {
+            "name": "Mozzarella",
+            "type":"cheese",
+            "category":["dairy","cheese"],
+            "quantity": 3.5,
+            "unit": "kg",
+            "alternatives":["Cheddar cheese", ""]
+        }
+    ],
+    "steps": [
+        {
+            "title":"Open the box with the pizza", 
+            "description":"Coger la masa y hacerla delgada",
+            "time": "10 min"
+        },
+        {
+            "title":"Put it the oven", 
+            "description":"Coger la masa y hacerla delgada",
+            "time": "10 min"
+        }
+    ]
+}

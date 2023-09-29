@@ -1,0 +1,24 @@
+ {
+    "type" : "object",
+    "properties" : {
+        "title" : {
+            "type" : "string"
+        },
+        "type" : {
+            "type" : "string"
+        },
+        "categories" : {
+            "type" : "array",
+            "items" : {
+                "type" : "string"
+            }
+        },
+        "possible_brands" : {
+            "type" : "array",
+            "items":{
+                "type":"array"
+                
+            }
+        }
+    }
+}

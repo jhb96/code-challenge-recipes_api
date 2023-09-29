@@ -1,0 +1,20 @@
+{
+    "type" : "object",
+    "properties" : {
+        "title" : {
+            "type" : "string"
+        },
+        "img_source" : {
+            "type" : "string"
+        },
+        "video_source" : {
+            "type" : "string"
+        },
+        "description" : {
+            "type" : "string"
+        },
+        "time": {
+            "type" : "integer"
+        }
+    }
+}

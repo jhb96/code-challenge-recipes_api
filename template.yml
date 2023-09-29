@@ -1,0 +1,97 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+
+Resources:
+
+  RecipesApiGateway:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: dev
+      Auth: 
+        DefaultAuthorizer: MyLambdaTokenAuthorizer
+        Authorizers: 
+          MyLambdaTokenAuthorizer:
+            FunctionArn: !GetAtt Authorizer.Arn
+      Models:
+        PutRecipeRequest:
+          type: object
+          required:
+            - recipe_id
+            - fields_to_modify
+          properties:
+            recipe_id:
+              type: string
+            fields_to_modify:
+              type: object    
+        PostRecipeRequest:
+          type: object
+          required:
+            - name
+            - ingredients
+          properties:
+            name:
+              type: string
+            ingredients:
+              type: array
+
+  RecipesApiEndPoint:
+    Type: AWS::Serverless::Function
+    Properties:
+      PackageType: Image
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref RecipesTable
+      Environment:
+        Variables:
+          RECIPES_TABLE: !Ref RecipesTable
+      Events:
+        PostRecipe:
+          Type: Api
+          Properties:
+            Path: /recipes
+            Method: POST
+            RestApiId: !Ref RecipesApiGateway
+            RequestModel:
+              Model: PostRecipeRequest
+              Required: true
+              ValidateBody: true
+
+        GetRecipe:
+          Type: Api
+          Properties:
+            Path: /recipes
+            Method: GET
+            RestApiId: !Ref RecipesApiGateway
+
+
+        PutRecipe:
+          Type: Api
+          Properties:
+            Path: /recipes
+            Method: PUT
+            RestApiId: !Ref RecipesApiGateway
+            RequestModel:
+              Model: PutRecipeRequest
+              Required: true
+              ValidateBody: true
+    Metadata:
+      DockerTag: python3.9-v1
+      DockerContext: ./recipes_lambda
+      Dockerfile: Dockerfile
+
+  Authorizer:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      CodeUri: ./authorizer
+      Handler: handler.authorizer
+      Runtime: nodejs12.x
+
+  RecipesTable:
+    Type: AWS::Serverless::SimpleTable
+
+
+Outputs:
+  ProdApiEndpoint:
+    Description: "YOUR API ENDPOINT"
+    Value: !Sub "https://${RecipesApiGateway}.execute-api.${AWS::Region}.amazonaws.com/dev/recipes"
+  
