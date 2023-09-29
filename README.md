@@ -4,14 +4,16 @@ The proposed solution can be found in [solution](solution.md) and explain all th
 
 ## Challenge topics
 Make an AWS serverless arquitecture with a CRUD API for recipes.
+
 Make an nodejs client to test the API.
-Time: 2 days
+
+Duration: 2 days
 
 Basically, this code challenge wants to probe the knowledge of the candidate in the following topics:
 - Serverless architecture
 - Python or Go programming languages
 - AWS knowledge: arquitecture, deployment, etc
-- Multiple relational databases: DynamoDB, ElasticSearch, etc
+- Multiple non-relational databases: DynamoDB, ElasticSearch, etc
 - NodeJS knowledge: API client
 - Docker (optionally)
 
@@ -26,9 +28,9 @@ To deploy the API you need:
 
 Download this repository in local
 
-```
-git clone https://github.com/jhb96/api_receipts
-cd api_receipts
+```ruby
+git clone https://github.com/jhb96/code-challenge-recipes_api
+cd code-challenge-recipes_api
 ```
 
 ## Deployment
